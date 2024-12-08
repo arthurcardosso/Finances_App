@@ -49,16 +49,20 @@ pip install -r requirements.txt
 
 O script _example.py_ demonstra como usar o aplicativo. Para analisar mais um uso prático do pacote e para executá-lo:
 
-_python example.py_
+python example.py
 
 ### Exemplo de Uso | Saída
 
 ╔════════════════════════════════════════════════════════════════╗
+
 ║                     Relatório Financeiro                       ║
+
 ╚════════════════════════════════════════════════════════════════╝
 
 ══════════════════════════════════════
+
 Relatório Financeiro de Arthur Cardoso
+
 ══════════════════════════════════════
 
 Contas:
@@ -91,22 +95,39 @@ finances_app/
 │   ├── clients.py               # Representação de clientes e suas finanças (contas, investimentos)
 
 │   ├── functions.py             # Funções utilitárias, como a geração de relatórios financeiros
+
 │   ├── investments.py           # Controle de investimentos financeiros, cálculo de rendimentos
+
 │   ├── transactions.py          # Registro e manipulação de transações financeiras (depósitos, retiradas)
+
 │
+
 ├── tests/                       # Pasta contendo os testes automatizados para cada módulo
+
 │   ├── __init__.py              # Torna o diretório 'tests' um pacote Python
+
 │   ├── test_accounts.py         # Testes para a classe Account e funcionalidades relacionadas
+
 │   ├── test_clients.py          # Testes para a classe Client e gerenciamento de clientes
+
 │   ├── test_functions.py        # Testes para as funções de geração de relatórios (generate_report, etc.)
+
 │   ├── test_investments.py      # Testes para a classe Investment e cálculos de rendimentos
+
 │   ├── test_transactions.py     # Testes para a classe Transaction e manipulação de transações
+
 │
+
 ├── setup.py                     # Script de configuração do pacote (instalação e dependências)
+
 ├── example.py                   # Exemplo de uso do pacote para fins de demonstração
+
 ├── LICENSE                      # Arquivo de licença do projeto
+
 ├── README.md                    # Documentação sobre o projeto, incluindo objetivo e uso
+
 ├── relations.txt                # Descrição das relações entre as classes do projeto
+
 └── requirements.txt             # Dependências necessárias para o funcionamento do pacote
 
 ## Funcionalidades
