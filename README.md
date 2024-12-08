@@ -53,28 +53,28 @@ _python example.py_
 
 ### Exemplo de Uso | Saída
 
-_╔════════════════════════════════════════════════════════════════╗_
-_║                     Relatório Financeiro                       ║_
-_╚════════════════════════════════════════════════════════════════╝_
+╔════════════════════════════════════════════════════════════════╗
+║                     Relatório Financeiro                       ║
+╚════════════════════════════════════════════════════════════════╝
 
-_══════════════════════════════════════_
-_Relatório Financeiro de Arthur Cardoso_
-_══════════════════════════════════════_
+══════════════════════════════════════
+Relatório Financeiro de Arthur Cardoso
+══════════════════════════════════════
 
-_Contas:_
+Contas:
 
-  _Conta: Conta Corrente_
-  _Saldo: R$ 3500.00_
-  _Transações: 2_
-  _Conta: Poupança_
-  _Saldo: R$ 3000.00_
-  _Transações: 1_
+  Conta: Conta Corrente
+  Saldo: R$ 3500.00
+  Transações: 2
+  Conta: Poupança
+  Saldo: R$ 3000.00
+  Transações: 1
 
-_Resumo Geral:_
+Resumo Geral:
 
-  _Total em Contas: R$ 6500.00_
-  _Total em Investimentos: R$ 11268.25_
-  _Patrimônio Líquido: R$ 17768.25_
+  Total em Contas: R$ 6500.00
+  Total em Investimentos: R$ 11268.25
+  Patrimônio Líquido: R$ 17768.25
 
 ## Estrutura do Pacote
 
@@ -83,9 +83,13 @@ finances_app/
 │
 
 ├── finances/                   # Pacote principal contendo as funcionalidades do aplicativo
+
 │   ├── __init__.py              # Torna o diretório 'finances' um pacote Python
+
 │   ├── accounts.py              # Gerenciamento de contas bancárias e transações financeiras
+
 │   ├── clients.py               # Representação de clientes e suas finanças (contas, investimentos)
+
 │   ├── functions.py             # Funções utilitárias, como a geração de relatórios financeiros
 │   ├── investments.py           # Controle de investimentos financeiros, cálculo de rendimentos
 │   ├── transactions.py          # Registro e manipulação de transações financeiras (depósitos, retiradas)
