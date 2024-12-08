@@ -55,7 +55,7 @@ python example.py
 
 ╔════════════════════════════════════════════════════════════════╗
 
-║                     Relatório Financeiro                       ║
+Relatório Financeiro  
 
 ╚════════════════════════════════════════════════════════════════╝
 
@@ -68,16 +68,24 @@ Relatório Financeiro de Arthur Cardoso
 Contas:
 
   Conta: Conta Corrente
+
   Saldo: R$ 3500.00
+
   Transações: 2
+
   Conta: Poupança
+
   Saldo: R$ 3000.00
+
   Transações: 1
+
 
 Resumo Geral:
 
   Total em Contas: R$ 6500.00
+
   Total em Investimentos: R$ 11268.25
+
   Patrimônio Líquido: R$ 17768.25
 
 ## Estrutura do Pacote
