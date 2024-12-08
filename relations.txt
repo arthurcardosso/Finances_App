@@ -1,0 +1,110 @@
+
+# Relações entre as Classes Implementadas no Pacote Finances_App
+
+O projeto segue uma arquitetura baseada em Programação Orientada a Objetos,
+com foco na separação clara de responsabilidades entre as classes.
+
+## 1. Classe Account
+
+A classe Account representa uma conta bancária de um cliente e gerencia o saldo e as transações associadas a essa conta.
+
+### Atributos:
+
+    name: Nome da conta
+    balance: Saldo atual da conta.
+    transactions: Lista de transações associadas a essa conta.
+    client: O cliente dono da conta.
+
+### Métodos:
+
+    add_transaction(amount: float, category: str, description: str = ""): Cria e adiciona uma transação à conta, atualizando o saldo.
+    get_transactions(start_date: Optional[datetime] = None, end_date: Optional[datetime] = None, category: Optional[str] = None): Retorna uma lista de transações filtradas por data ou categoria.
+
+### Relações:
+
+- A Account está diretamente associada a um Client. Cada conta tem um atributo client, que é uma instância da classe Client.
+- A Account tem uma relação com a Transaction, pois contém uma lista de transações que são registradas na conta.
+
+## 2. Classe Transaction
+
+A classe Transaction representa uma transação financeira (como um depósito ou retirada) associada a uma conta bancária.
+
+### Atributos:
+
+    amount: Valor da transação.
+    date: Data em que a transação foi realizada.
+    category: Categoria da transação (ex: "Depósito", "Saque").
+    description: Descrição da transação.
+
+### Métodos:
+
+    __str__(): Retorna uma string descritiva da transação, com informações como valor e categoria.
+    update(**attributes): Atualiza um ou mais atributos da transação.
+
+### Relações:
+
+- Transaction está associada à Account. As transações são adicionadas e registradas dentro de uma conta.
+
+## 3. Classe Investment
+
+A classe Investment representa um investimento feito por um cliente, com um valor inicial, data de compra e uma taxa de retorno mensal.
+
+### Atributos:
+
+    type: Tipo do investimento (ex: "Ações").
+    initial_amount: Valor inicial investido.
+    date_purchased: Data da compra do investimento.
+    rate_of_return: Taxa de retorno mensal do investimento.
+    client: O cliente dono do investimento.
+
+### Métodos:
+
+    calculate_value(): Calcula o valor atual do investimento, levando em consideração o retorno mensal e o tempo passado.
+    sell(account: Account): Vende o investimento e deposita o valor atual na conta especificada.
+
+### Relações:
+
+- Investment está associado a um Client. Cada investimento tem um atributo client, que é uma instância da classe Client.
+- Investment tem um relacionamento com Account, pois os rendimentos do investimento podem ser vendidos e depositados diretamente em uma conta do cliente.
+
+## 4. Classe Client
+
+A classe Client representa um cliente que pode ter várias contas e investimentos. Ela é responsável por gerenciar as finanças pessoais de um usuário, incluindo a adição de contas e investimentos, bem como o cálculo do patrimônio líquido.
+
+### Atributos:
+
+    name: Nome do cliente.
+    accounts: Lista de contas bancárias do cliente.
+    investments: Lista de investimentos do cliente.
+
+### Métodos:
+
+    add_account(account_name: str): Cria uma nova conta bancária para o cliente.
+    add_investments(investment: Investment): Adiciona um investimento ao cliente.
+    get_net_worth(): Calcula o patrimônio líquido do cliente, somando o valor das contas e o valor dos investimentos.
+
+### Relações:
+
+- Client tem uma relação com Account, pois um cliente pode ter várias contas bancárias (cada conta é uma instância de Account).
+- Client também está associado a Investment, já que o cliente pode ter múltiplos investimentos (cada investimento é uma instância de Investment).
+- Client utiliza a classe Transaction indiretamente, pois as transações são associadas às contas, que por sua vez pertencem ao cliente.
+
+## Visão geral das Relações e Funcionamento das Classes Implementadas
+
+- Client pode ter múltiplas Account e Investment.
+- Cada Account pertence a um Client e possui várias Transaction.
+- Cada Investment pertence a um Client e pode ser vendido e depositado em uma Account.
+- As Transaction estão diretamente associadas a uma Account e descrevem as mudanças financeiras que ocorrem na conta.
+
+## Fluxo de Execução do Pacote
+
+─ Criação do Cliente: O cliente é criado, passando seu nome para a classe Client, e ele é associado a uma lista de contas e investimentos.
+─ Adição de Contas: O cliente pode adicionar contas através do método add_account. Cada conta é representada pela classe Account e associada ao cliente.
+─ Realização de Transações: As contas podem registrar transações financeiras (depósitos, retiradas) através do método add_transaction da classe Account.
+─ Adição de Investimentos: O cliente pode adicionar investimentos à sua lista de investimentos usando o método add_investments da classe Client. O investimento é calculado com base no valor inicial e na taxa de retorno mensal.
+─ Cálculo do Patrimônio Líquido: O patrimônio líquido do cliente é calculado através do método get_net_worth, somando o valor das contas e dos investimentos.
+─ Geração de Relatórios: Relatórios financeiros são gerados através da função generate_report, fornecendo uma visão detalhada das contas, transações e investimentos do cliente.
+─ Projeção de Rendimentos Futuros: O valor futuro dos investimentos é projetado através da função future_value_report, com base na data fornecida e na taxa de retorno dos investimentos.
+
+Por fim, é importante ressaltar que o projeto está organizado com o arquivo __init__.py para facilitar a importação
+dos módulos.
