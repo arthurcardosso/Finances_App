@@ -79,7 +79,9 @@ _Resumo Geral:_
 ## Estrutura do Pacote
 
 finances_app/
+
 │
+
 ├── finances/                   # Pacote principal contendo as funcionalidades do aplicativo
 │   ├── __init__.py              # Torna o diretório 'finances' um pacote Python
 │   ├── accounts.py              # Gerenciamento de contas bancárias e transações financeiras
